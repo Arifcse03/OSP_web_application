@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="StnVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  RowClass="mnj.mfg.model.lov.views.StnVORowImpl"
+  ComponentClass="mnj.mfg.model.lov.views.StnVOImpl"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="mnj.mfg.model.lov.views.StnVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery>
+    <![CDATA[SELECT SYSTEM_ID,
+POC_ID,
+BPO_NO,
+SUM (ORDERED_QTY) ORDERED_QTY,
+--STN,
+COLOR,
+WASH,
+NULL PART,
+BUYER_ID,
+STYLE_NAME,
+SEASON,
+ORG_ID,BPO
+FROM (
+SELECT DISTINCT poc_l.SYSTEM_ID,
+poc_h.POC_ID,
+bpo.BPO_ID BPO_NO,
+bpo.QTY ORDERED_QTY,
+poc_l.WASH_NAME WASH,
+poc_l.COLOR COLOR,
+NULL PART,
+poc_h.BUYER_ID,
+poc_h.STYLE STYLE_NAME,
+poc_h.SEASON,
+poc_h.LC_UNIT ORG_ID,
+bpo.BPO_ID,
+bpo.BPO
+FROM xx_om_bpo_info_t bpo, xx_om_poc_h_t poc_h,xx_om_poc_l_t poc_l 
+WHERE bpo.CLASSIFICATION= 'BPO'
+and poc_h.poc_id=poc_l.poc_id and
+bpo.fob_id=poc_l.fob_id and bpo.status=1 ) ABC
+WHERE NOT EXISTS
+(SELECT 1
+FROM MNJ_MFG_OSP_STN_LINE MMOSL, MNJ_MFG_OSP_HEADER H
+WHERE 1 = 1
+AND MMOSL.POC_ID = ABC.POC_ID
+AND MMOSL.SYSTEM_ID = ABC.SYSTEM_ID)
+GROUP BY SYSTEM_ID,
+POC_ID,
+BPO_NO,
+COLOR,
+WASH,
+PART,
+BUYER_ID,
+STYLE_NAME,
+SEASON,
+ORG_ID,
+BPO
+ORDER BY BPO_NO]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="SystemId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="SYSTEM_ID"
+    Expression="SYSTEM_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PocId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="540"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="POC_ID"
+    Expression="POC_ID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="540"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BpoNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BPO_NO"
+    Expression="BPO_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrderedQty"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ORDERED_QTY"
+    Expression="ORDERED_QTY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Color"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COLOR"
+    Expression="COLOR"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Wash"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="240"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="WASH"
+    Expression="WASH"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="mnj.mfg.model.lov.views.StnVO.Wash_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Part"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PART"
+    Expression="PART"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="BuyerId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BUYER_ID"
+    Expression="BUYER_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StyleName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STYLE_NAME"
+    Expression="STYLE_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Season"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SEASON"
+    Expression="SEASON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OrgId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ORG_ID"
+    Expression="ORG_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Bpo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BPO"
+    Expression="BPO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Stn"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="91"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STN"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="91"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Flag"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="mnj.mfg.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
