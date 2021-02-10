@@ -326,6 +326,7 @@
           <Item Value="JobName"/>
           <Item Value="StnSelectionOrgAssignFlag"
                 Binds="StnSelectionOrgAssignFlag"/>
+          <Item Value="BpoId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

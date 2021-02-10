@@ -258,13 +258,13 @@
                     <af:showPopupBehavior popupId="::p2" alignId="::f1"/>
                   </af:commandButton>
                   <af:commandButton text="Assign Org" id="cb17">
-                    <af:showPopupBehavior popupId="p3" alignId="::f1"/>
+                    <af:showPopupBehavior popupId="::p3"/>
                   </af:commandButton>
                   <af:commandButton text="Assign Embr" id="cb23">
-                    <af:showPopupBehavior popupId="::p8" alignId="::f1"/>
+                    <af:showPopupBehavior popupId="::p8"/>
                   </af:commandButton>
                   <af:commandButton text="Assign Print" id="cb20">
-                    <af:showPopupBehavior popupId="::p6" alignId="::f1"/>
+                    <af:showPopupBehavior popupId="::p6"/>
                   </af:commandButton>
                   <af:commandButton text="Item Creation" id="cb9"
                                     actionListener="#{MainBean.ItemCreation}"/>
@@ -771,7 +771,8 @@
                   <af:outputText value="#{row.Bpo}" id="ot5"/>
                 </af:column>
                 <af:column sortProperty="Stn" filterable="true" sortable="true"
-                           headerText="STN" id="c22" align="center">
+                           headerText="STN" id="c22" align="center"
+                           visible="false">
                   <af:outputText value="#{row.Stn}" id="ot6"/>
                 </af:column>
                 <af:column sortProperty="Color" filterable="true"
@@ -780,7 +781,7 @@
                   <af:outputText value="#{row.Color}" id="ot3"/>
                 </af:column>
                 <af:column sortProperty="StnQty" filterable="true"
-                           sortable="true" headerText="STN Quantity" id="c23"
+                           sortable="true" headerText="Quantity" id="c23"
                            align="center">
                   <af:outputText value="#{row.StnQty}" id="ot4">
                     <af:convertNumber groupingUsed="false"
@@ -901,13 +902,13 @@
                                 columns="#{bindings.StnLineVO12.hints.Bpo.displayWidth}"
                                 maximumLength="#{bindings.StnLineVO12.hints.Bpo.precision}"
                                 shortDesc="#{bindings.StnLineVO12.hints.Bpo.tooltip}"
-                                id="it24">
+                                id="it24" readOnly="true">
                     <f:validator binding="#{row.bindings.Bpo.validator}"/>
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="Stn" filterable="true" sortable="true"
                            headerText="STN"
-                           id="c39" width="106">
+                           id="c39" width="106" visible="false">
                   <af:inputText value="#{row.bindings.Stn.inputValue}"
                                 label="#{bindings.StnLineVO12.hints.Stn.label}"
                                 required="#{bindings.StnLineVO12.hints.Stn.mandatory}"
@@ -928,13 +929,13 @@
                                 columns="#{bindings.StnLineVO12.hints.Color.displayWidth}"
                                 maximumLength="#{bindings.StnLineVO12.hints.Color.precision}"
                                 shortDesc="#{bindings.StnLineVO12.hints.Color.tooltip}"
-                                id="it36">
+                                id="it36" readOnly="true">
                     <f:validator binding="#{row.bindings.Color.validator}"/>
                   </af:inputText>
                 </af:column>
-                <af:column sortProperty="StnQty" filterable="true"
+                <af:column sortProperty="Qty" filterable="true"
                            sortable="true"
-                           headerText="STN Quantity"
+                           headerText=" Quantity"
                            id="c33" width="71">
                   <af:inputText value="#{row.bindings.StnQty.inputValue}"
                                 label="#{bindings.StnLineVO12.hints.StnQty.label}"
@@ -942,7 +943,7 @@
                                 columns="#{bindings.StnLineVO12.hints.StnQty.displayWidth}"
                                 maximumLength="#{bindings.StnLineVO12.hints.StnQty.precision}"
                                 shortDesc="#{bindings.StnLineVO12.hints.StnQty.tooltip}"
-                                id="it38">
+                                id="it38" readOnly="true">
                     <f:validator binding="#{row.bindings.StnQty.validator}"/>
                     <af:convertNumber groupingUsed="false"
                                       pattern="#{bindings.StnLineVO12.hints.StnQty.format}"/>
@@ -1044,20 +1045,20 @@
                 </af:column>
                 <af:column sortProperty="Bpo" filterable="true" sortable="true"
                            headerText="BPO"
-                           id="c40">
+                           id="c40" align="center">
                   <af:inputText value="#{row.bindings.Bpo.inputValue}"
                                 label="#{bindings.StnLineVO13.hints.Bpo.label}"
                                 required="#{bindings.StnLineVO13.hints.Bpo.mandatory}"
                                 columns="#{bindings.StnLineVO13.hints.Bpo.displayWidth}"
                                 maximumLength="#{bindings.StnLineVO13.hints.Bpo.precision}"
                                 shortDesc="#{bindings.StnLineVO13.hints.Bpo.tooltip}"
-                                id="it37">
+                                id="it37" readOnly="true">
                     <f:validator binding="#{row.bindings.Bpo.validator}"/>
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="Stn" filterable="true" sortable="true"
                            headerText="STN"
-                           id="c49">
+                           id="c49" visible="false">
                   <af:inputText value="#{row.bindings.Stn.inputValue}"
                                 label="#{bindings.StnLineVO13.hints.Stn.label}"
                                 required="#{bindings.StnLineVO13.hints.Stn.mandatory}"
@@ -1071,28 +1072,28 @@
                 <af:column sortProperty="Color" filterable="true"
                            sortable="true"
                            headerText="Color"
-                           id="c45">
+                           id="c45" align="center">
                   <af:inputText value="#{row.bindings.Color.inputValue}"
                                 label="#{bindings.StnLineVO13.hints.Color.label}"
                                 required="#{bindings.StnLineVO13.hints.Color.mandatory}"
                                 columns="#{bindings.StnLineVO13.hints.Color.displayWidth}"
                                 maximumLength="#{bindings.StnLineVO13.hints.Color.precision}"
                                 shortDesc="#{bindings.StnLineVO13.hints.Color.tooltip}"
-                                id="it43">
+                                id="it43" readOnly="true">
                     <f:validator binding="#{row.bindings.Color.validator}"/>
                   </af:inputText>
                 </af:column>
                 <af:column sortProperty="StnQty" filterable="true"
                            sortable="true"
-                           headerText="STN Quantity"
-                           id="c57">
+                           headerText="Quantity"
+                           id="c57" align="center">
                   <af:inputText value="#{row.bindings.StnQty.inputValue}"
                                 label="#{bindings.StnLineVO13.hints.StnQty.label}"
                                 required="#{bindings.StnLineVO13.hints.StnQty.mandatory}"
                                 columns="#{bindings.StnLineVO13.hints.StnQty.displayWidth}"
                                 maximumLength="#{bindings.StnLineVO13.hints.StnQty.precision}"
                                 shortDesc="#{bindings.StnLineVO13.hints.StnQty.tooltip}"
-                                id="it42">
+                                id="it42" readOnly="true">
                     <f:validator binding="#{row.bindings.StnQty.validator}"/>
                     <af:convertNumber groupingUsed="false"
                                       pattern="#{bindings.StnLineVO13.hints.StnQty.format}"/>
