@@ -47,8 +47,15 @@
        ) job_name,
        StnLineEO.SYSTEM_ID, 
        StnLineEO.POC_ID,
-StnLineEO.BPO_ID
-FROM MNJ_MFG_OSP_STN_LINE StnLineEO
+StnLineEO.BPO_ID,
+bpo.BPO BPO_NEW,
+pl.COLOR COLOR_NEW,
+pl.Wash_Name New_wash,
+bpo.Qty Bpo_Quantity
+FROM MNJ_MFG_OSP_STN_LINE StnLineEO,xx_om_poc_h_t ph,xx_om_poc_l_t pl,xx_om_bpo_info_t bpo
+where bpo.bpo_id=StnLineEO.BPO_ID
+and bpo.fob_id=pl.fob_id
+and pl.poc_id=ph.poc_id
 ORDER BY StnLineEO.STN,StnLineEO.BPO,StnLineEO.PROD_LINE]]>
   </SQLQuery>
   <EntityUsage
@@ -227,6 +234,71 @@ ORDER BY StnLineEO.STN,StnLineEO.BPO,StnLineEO.PROD_LINE]]>
     EntityUsage="StnLineEO"
     AliasName="POC_ID"/>
   <ViewAttribute
+    Name="BpoId"
+    PrecisionRule="true"
+    EntityAttrName="BpoId"
+    EntityUsage="StnLineEO"
+    AliasName="BPO_ID"/>
+  <ViewAttribute
+    Name="BpoNew"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BPO_NEW"
+    Expression="BPO_NEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ColorNew"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COLOR_NEW"
+    Expression="COLOR_NEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NewWash"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NEW_WASH"
+    Expression="NEW_WASH"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BpoQuantity"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BPO_QUANTITY"
+    Expression="BPO_QUANTITY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
     Name="StnSelectionOrgAssignFlag"
     IsSelected="false"
     IsPersistent="false"
@@ -251,12 +323,6 @@ ORDER BY StnLineEO.STN,StnLineEO.BPO,StnLineEO.PROD_LINE]]>
     Type="java.lang.String"
     ColumnType="$none$"
     SQLType="VARCHAR"/>
-  <ViewAttribute
-    Name="BpoId"
-    PrecisionRule="true"
-    EntityAttrName="BpoId"
-    EntityUsage="StnLineEO"
-    AliasName="BPO_ID"/>
   <ViewLinkAccessor
     Name="DepAssignVO"
     ViewLink="mnj.mfg.model.entities.MnjMfgOspDepAssignFkLink"

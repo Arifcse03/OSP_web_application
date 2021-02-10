@@ -221,14 +221,14 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         
        // linerow.setAttribute("SystemId", getPopulateValue(poprow, "SystemId"));
         
-        linerow.setAttribute("Color", getPopulateValue(poprow, "Color"));
-        linerow.setAttribute("Wash", getPopulateValue(poprow, "Wash"));
+       // linerow.setAttribute("Color", getPopulateValue(poprow, "Color"));
+       // linerow.setAttribute("Wash", getPopulateValue(poprow, "Wash"));
 
-        linerow.setAttribute("Bpo", getPopulateValue(poprow, "Bpo"));
+       // linerow.setAttribute("Bpo", getPopulateValue(poprow, "Bpo"));
 
         linerow.setAttribute("Part", getPopulateValue(poprow, "Part"));
 
-        linerow.setAttribute("StnQty", getPopulateValue(poprow, "OrderedQty"));
+      //  linerow.setAttribute("StnQty", getPopulateValue(poprow, "OrderedQty"));
 
         linerow.setAttribute("ProdLine", 1);
 

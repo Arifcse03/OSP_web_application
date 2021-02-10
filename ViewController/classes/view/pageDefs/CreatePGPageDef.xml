@@ -73,6 +73,10 @@
           <Item Value="LastUpdaterName"/>
           <Item Value="LastUpdatedDate"/>
           <Item Value="BpoId"/>
+          <Item Value="BpoNew"/>
+          <Item Value="BpoQuantity"/>
+          <Item Value="ColorNew"/>
+          <Item Value="NewWash"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

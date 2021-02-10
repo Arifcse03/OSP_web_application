@@ -318,8 +318,14 @@
                                       pattern="#{bindings.StnLineVO1.hints.BpoId.format}"/>
                   </af:outputText>
                 </af:column>
+                <af:column headerText="Bpo"
+                           id="c52" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoNew">
+                  <af:outputText value="#{row.BpoNew}" id="ot16"/>
+                </af:column>
                 <af:column sortProperty="Bpo" filterable="true" sortable="true"
-                           headerText="BPO" id="c2" align="center" width="105">
+                           headerText="BPO" id="c2" align="center" width="105"
+                           visible="false">
                   <af:inputText value="#{row.bindings.Bpo.inputValue}"
                                 label="#{bindings.StnLineVO1.hints.Bpo.label}"
                                 required="#{bindings.StnLineVO1.hints.Bpo.mandatory}"
@@ -343,9 +349,17 @@
                     <f:validator binding="#{row.bindings.Stn.validator}"/>
                   </af:inputText>
                 </af:column>
+                <af:column headerText="Quantity"
+                           id="c53" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoQuantity">
+                  <af:outputText value="#{row.BpoQuantity}" id="ot17">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.StnLineVO1.hints.BpoQuantity.format}"/>
+                  </af:outputText>
+                </af:column>
                 <af:column sortProperty="StnQty" filterable="true"
                            sortable="true" headerText="BPO Qty" id="c4"
-                           align="center" width="105">
+                           align="center" width="105" visible="false">
                   <af:inputText value="#{row.bindings.StnQty.inputValue}"
                                 label="#{bindings.StnLineVO1.hints.StnQty.label}"
                                 required="#{bindings.StnLineVO1.hints.StnQty.mandatory}"
@@ -359,10 +373,20 @@
                                       pattern="#{bindings.StnLineVO1.hints.StnQty.format}"/>
                   </af:inputText>
                 </af:column>
+                <af:column headerText="Color"
+                           id="c54" align="center" sortable="true"
+                           filterable="true" sortProperty="ColorNew">
+                  <af:outputText value="#{row.ColorNew}" id="ot18"/>
+                </af:column>
+                <af:column headerText="Wash"
+                           id="c55" align="center" sortable="true"
+                           filterable="true" sortProperty="NewWash">
+                  <af:outputText value="#{row.NewWash}" id="ot19"/>
+                </af:column>
                 <af:column sortProperty="Color" filterable="true"
                            sortable="true"
                            headerText="Color"
-                           id="c5" align="center" width="107">
+                           id="c5" align="center" width="107" visible="false">
                   <af:inputText value="#{row.bindings.Color.inputValue}"
                                 label="#{bindings.StnLineVO1.hints.Color.label}"
                                 required="#{bindings.StnLineVO1.hints.Color.mandatory}"
@@ -375,7 +399,8 @@
                 </af:column>
                 <af:column headerText="Wash"
                            id="c29" align="center" sortable="true"
-                           filterable="true" sortProperty="Wash" width="105">
+                           filterable="true" sortProperty="Wash" width="105"
+                           visible="false">
                   <af:inputText value="#{row.bindings.Wash.inputValue}"
                                 label="#{bindings.StnLineVO1.hints.Wash.label}"
                                 required="#{bindings.StnLineVO1.hints.Wash.mandatory}"
@@ -852,7 +877,8 @@
                               columns="#{bindings.DepartmentAssignPopUp1.hints.Department.displayWidth}"
                               maximumLength="#{bindings.DepartmentAssignPopUp1.hints.Department.precision}"
                               shortDesc="#{bindings.DepartmentAssignPopUp1.hints.Department.tooltip}"
-                              id="it23" contentStyle="text-align:center;">
+                              id="it23" contentStyle="text-align:center;"
+                              readOnly="true">
                   <f:validator binding="#{row.bindings.Department.validator}"/>
                 </af:inputText>
               </af:column>
@@ -986,7 +1012,7 @@
                               columns="#{bindings.OrgAssignToPrintingPopUpVO1.hints.InvOrgName.displayWidth}"
                               maximumLength="#{bindings.OrgAssignToPrintingPopUpVO1.hints.InvOrgName.precision}"
                               shortDesc="#{bindings.OrgAssignToPrintingPopUpVO1.hints.InvOrgName.tooltip}"
-                              id="it26">
+                              id="it26" readOnly="true">
                   <f:validator binding="#{row.bindings.InvOrgName.validator}"/>
                 </af:inputText>
               </af:column>
@@ -999,7 +1025,7 @@
                               columns="#{bindings.OrgAssignToPrintingPopUpVO1.hints.InvOrg.displayWidth}"
                               maximumLength="#{bindings.OrgAssignToPrintingPopUpVO1.hints.InvOrg.precision}"
                               shortDesc="#{bindings.OrgAssignToPrintingPopUpVO1.hints.InvOrg.tooltip}"
-                              id="it25">
+                              id="it25" readOnly="true">
                   <f:validator binding="#{row.bindings.InvOrg.validator}"/>
                   <af:convertNumber groupingUsed="false"
                                     pattern="#{bindings.OrgAssignToPrintingPopUpVO1.hints.InvOrg.format}"/>
@@ -1136,7 +1162,7 @@
                               columns="#{bindings.OrgAssignToPrintingPopUpVO11.hints.InvOrgName.displayWidth}"
                               maximumLength="#{bindings.OrgAssignToPrintingPopUpVO11.hints.InvOrgName.precision}"
                               shortDesc="#{bindings.OrgAssignToPrintingPopUpVO11.hints.InvOrgName.tooltip}"
-                              id="it30">
+                              id="it30" readOnly="true">
                   <f:validator binding="#{row.bindings.InvOrgName.validator}"/>
                 </af:inputText>
               </af:column>
@@ -1149,7 +1175,7 @@
                               columns="#{bindings.OrgAssignToPrintingPopUpVO11.hints.InvOrg.displayWidth}"
                               maximumLength="#{bindings.OrgAssignToPrintingPopUpVO11.hints.InvOrg.precision}"
                               shortDesc="#{bindings.OrgAssignToPrintingPopUpVO11.hints.InvOrg.tooltip}"
-                              id="it29">
+                              id="it29" readOnly="true">
                   <f:validator binding="#{row.bindings.InvOrg.validator}"/>
                   <af:convertNumber groupingUsed="false"
                                     pattern="#{bindings.OrgAssignToPrintingPopUpVO11.hints.InvOrg.format}"/>
