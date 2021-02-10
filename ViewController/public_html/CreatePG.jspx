@@ -231,7 +231,7 @@
                   <af:commandButton text="Delete" id="cb27"
                                     actionListener="#{MainBean.deleteOnConditionFromLine}"
                                     disabled="#{bindings.StnLineVO1.estimatedRowCount&lt;1 ? 'true':'false'}"/>
-                  <af:commandButton text="Fill STN" id="cb8"
+                  <af:commandButton text="Fill BPO" id="cb8"
                                     partialSubmit="true">
                     <af:showPopupBehavior popupId="::p1"/>
                   </af:commandButton>

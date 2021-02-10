@@ -59,7 +59,7 @@ AND H.LC_UNIT = :p_org]]>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="10"/>
+          Value="25"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -79,6 +79,8 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -99,6 +101,8 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -138,6 +142,8 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -158,6 +164,8 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -178,6 +186,8 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -198,6 +208,8 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -218,7 +230,9 @@ AND H.LC_UNIT = :p_org]]>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="10"/>
+          Value="40"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -240,6 +254,8 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
