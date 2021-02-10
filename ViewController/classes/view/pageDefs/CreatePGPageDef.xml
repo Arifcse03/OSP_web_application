@@ -209,6 +209,9 @@
           <Item Value="StnQty"/>
           <Item Value="StnSelectionOrgAssignFlag"
                 Binds="StnSelectionOrgAssignFlag"/>
+          <Item Value="BpoNew"/>
+          <Item Value="BpoQuantity"/>
+          <Item Value="ColorNew"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -331,6 +334,9 @@
           <Item Value="StnSelectionOrgAssignFlag"
                 Binds="StnSelectionOrgAssignFlag"/>
           <Item Value="BpoId"/>
+          <Item Value="BpoNew"/>
+          <Item Value="BpoQuantity"/>
+          <Item Value="ColorNew"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -397,6 +403,9 @@
           <Item Value="JobName"/>
           <Item Value="StnSelectionOrgAssignFlag"
                 Binds="StnSelectionOrgAssignFlag"/>
+          <Item Value="BpoNew"/>
+          <Item Value="BpoQuantity"/>
+          <Item Value="ColorNew"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

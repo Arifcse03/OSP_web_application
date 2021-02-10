@@ -791,8 +791,47 @@
                                             shortDesc="#{bindings.StnLineVO11.hints.StnSelectionOrgAssignFlag.tooltip}"
                                             id="sbc2"/>
                 </af:column>
+                <af:column headerText="BPO"
+                           id="c60" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoNew">
+                  <af:outputText value="#{row.BpoNew}" id="ot39"/>
+                </af:column>
+                <af:column headerText="Color"
+                           id="c62" sortProperty="ColoeNew" sortable="true"
+                           filterable="true" align="center">
+                  <af:outputText value="#{row.ColorNew}" id="ot41"/>
+                </af:column>
+                <af:column headerText="Quantity"
+                           id="c61" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoQuantity">
+                  <af:outputText value="#{row.BpoQuantity}" id="ot40">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.StnLineVO11.hints.BpoQuantity.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column headerText="Bpo"
+                           id="c56" align="center" sortable="true"
+                           filterable="true" visible="false">
+                  <af:outputText value="#{row.BpoNew}" id="ot36"/>
+                </af:column>
+                <af:column headerText="Color"
+                           id="c58" align="center" sortable="true"
+                           filterable="true" sortProperty="ColorNew"
+                           visible="false">
+                  <af:outputText value="#{row.ColorNew}" id="ot37"/>
+                </af:column>
+                <af:column headerText="Quantity"
+                           id="c59" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoQuantit"
+                           visible="false">
+                  <af:outputText value="#{row.BpoQuantity}" id="ot38">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.StnLineVO11.hints.BpoQuantity.format}"/>
+                  </af:outputText>
+                </af:column>
                 <af:column sortProperty="Bpo" filterable="true" sortable="true"
-                           headerText="BPO" id="c20" align="center">
+                           headerText="BPO" id="c20" align="center"
+                           visible="false">
                   <af:outputText value="#{row.Bpo}" id="ot5"/>
                 </af:column>
                 <af:column sortProperty="Stn" filterable="true" sortable="true"
@@ -802,12 +841,12 @@
                 </af:column>
                 <af:column sortProperty="Color" filterable="true"
                            sortable="true" headerText="Color" id="c21"
-                           align="center">
+                           align="center" visible="false">
                   <af:outputText value="#{row.Color}" id="ot3"/>
                 </af:column>
                 <af:column sortProperty="StnQty" filterable="true"
                            sortable="true" headerText="Quantity" id="c23"
-                           align="center">
+                           align="center" visible="false">
                   <af:outputText value="#{row.StnQty}" id="ot4">
                     <af:convertNumber groupingUsed="false"
                                       pattern="#{bindings.StnLineVO11.hints.StnQty.format}"/>
@@ -920,8 +959,27 @@
                                             shortDesc="#{bindings.StnLineVO12.hints.StnSelectionOrgAssignFlag.tooltip}"
                                             id="sbc6"/>
                 </af:column>
+                <af:column headerText="BPO "
+                           id="c63" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoNew">
+                  <af:outputText value="#{row.BpoNew}" id="ot42"/>
+                </af:column>
+                <af:column headerText="Color"
+                           id="c65" align="center" sortable="true"
+                           filterable="true" sortProperty="ColorNew">
+                  <af:outputText value="#{row.ColorNew}" id="ot44"/>
+                </af:column>
+                <af:column headerText="Quantity"
+                           id="c64" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoQuantity">
+                  <af:outputText value="#{row.BpoQuantity}" id="ot43">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.StnLineVO12.hints.BpoQuantity.format}"/>
+                  </af:outputText>
+                </af:column>
                 <af:column sortProperty="Bpo" filterable="true" sortable="true"
-                           headerText="BPO" id="c37" width="104">
+                           headerText="BPO" id="c37" width="104" align="center"
+                           visible="false">
                   <af:inputText value="#{row.bindings.Bpo.inputValue}"
                                 label="#{bindings.StnLineVO12.hints.Bpo.label}"
                                 required="#{bindings.StnLineVO12.hints.Bpo.mandatory}"
@@ -948,7 +1006,7 @@
                 <af:column sortProperty="Color" filterable="true"
                            sortable="true"
                            headerText="Color"
-                           id="c32" width="105">
+                           id="c32" width="105" visible="false">
                   <af:inputText value="#{row.bindings.Color.inputValue}"
                                 label="#{bindings.StnLineVO12.hints.Color.label}"
                                 required="#{bindings.StnLineVO12.hints.Color.mandatory}"
@@ -962,7 +1020,7 @@
                 <af:column sortProperty="Qty" filterable="true"
                            sortable="true"
                            headerText=" Quantity"
-                           id="c33" width="71">
+                           id="c33" width="71" visible="false">
                   <af:inputText value="#{row.bindings.StnQty.inputValue}"
                                 label="#{bindings.StnLineVO12.hints.StnQty.label}"
                                 required="#{bindings.StnLineVO12.hints.StnQty.mandatory}"
@@ -1069,9 +1127,27 @@
                                             shortDesc="#{bindings.StnLineVO13.hints.StnSelectionOrgAssignFlag.tooltip}"
                                             id="sbc8"/>
                 </af:column>
+                <af:column headerText="BPO"
+                           id="c66" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoNew">
+                  <af:outputText value="#{row.BpoNew}" id="ot45"/>
+                </af:column>
+                <af:column headerText="Color" id="c68" align="center"
+                           sortable="true" filterable="true"
+                           sortProperty="ColorNew">
+                  <af:outputText value="#{row.ColorNew}" id="ot47"/>
+                </af:column>
+                <af:column headerText="Quantity"
+                           id="c67" align="center" sortable="true"
+                           filterable="true" sortProperty="BpoQuantity">
+                  <af:outputText value="#{row.BpoQuantity}" id="ot46">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.StnLineVO13.hints.BpoQuantity.format}"/>
+                  </af:outputText>
+                </af:column>
                 <af:column sortProperty="Bpo" filterable="true" sortable="true"
                            headerText="BPO"
-                           id="c40" align="center">
+                           id="c40" align="center" visible="false">
                   <af:inputText value="#{row.bindings.Bpo.inputValue}"
                                 label="#{bindings.StnLineVO13.hints.Bpo.label}"
                                 required="#{bindings.StnLineVO13.hints.Bpo.mandatory}"
@@ -1098,7 +1174,7 @@
                 <af:column sortProperty="Color" filterable="true"
                            sortable="true"
                            headerText="Color"
-                           id="c45" align="center">
+                           id="c45" align="center" visible="false">
                   <af:inputText value="#{row.bindings.Color.inputValue}"
                                 label="#{bindings.StnLineVO13.hints.Color.label}"
                                 required="#{bindings.StnLineVO13.hints.Color.mandatory}"
@@ -1112,7 +1188,7 @@
                 <af:column sortProperty="StnQty" filterable="true"
                            sortable="true"
                            headerText="Quantity"
-                           id="c57" align="center">
+                           id="c57" align="center" visible="false">
                   <af:inputText value="#{row.bindings.StnQty.inputValue}"
                                 label="#{bindings.StnLineVO13.hints.StnQty.label}"
                                 required="#{bindings.StnLineVO13.hints.StnQty.mandatory}"
