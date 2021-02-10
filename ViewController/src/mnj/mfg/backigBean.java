@@ -740,4 +740,11 @@ Integer.parseInt(selectedRow.getAttribute("StnQty").toString());
             e.printStackTrace();
         }
     }
+
+    public void CustomSave(ActionEvent actionEvent) {
+        // Add event code here...
+        am.getDBTransaction().commit();
+        ViewObject ho=am.getHeaderVO1();
+        ho.clearCache();
+    }
 }

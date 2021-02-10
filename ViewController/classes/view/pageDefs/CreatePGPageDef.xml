@@ -487,5 +487,20 @@
         <Item Value="OrgId"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="NewBuyerName">
+      <AttrNames>
+        <Item Value="NewBuyerName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="NewStyle">
+      <AttrNames>
+        <Item Value="NewStyle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HeaderVO1Iterator" id="NewSeason">
+      <AttrNames>
+        <Item Value="NewSeason"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

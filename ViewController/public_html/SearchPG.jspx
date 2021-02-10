@@ -67,34 +67,50 @@
                                   disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}"
                                   id="cl1" action="Go to Create Page"/>
                 </af:column>
-                <af:column headerText="POC ID"
-                           id="c3" align="center" sortable="true"
-                           filterable="true" sortProperty="PocId">
-                  <af:outputText value="#{row.PocId}" id="ot7">
-                    <af:convertNumber groupingUsed="false"
-                                      pattern="#{bindings.HeaderVO1.hints.PocId.format}"/>
-                  </af:outputText>
-                </af:column>
                 <af:column headerText="Unit"
                            id="c4" sortable="true" filterable="true"
                            sortProperty="OrgCode" align="center">
                   <af:outputText value="#{row.OrgCode}" id="ot8"/>
                 </af:column>
+                <af:column headerText="POC ID" id="c3" align="center"
+                           sortable="true" filterable="true"
+                           sortProperty="PocId">
+                  <af:outputText value="#{row.PocId}" id="ot7">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.HeaderVO1.hints.PocId.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column headerText="Buyer"
+                           id="c5" align="center" sortable="true"
+                           filterable="true" sortProperty="NewBuyerName">
+                  <af:outputText value="#{row.NewBuyerName}" id="ot4"/>
+                </af:column>
                 <af:column headerText="Buyer" id="c2" align="center"
                            sortable="true" filterable="true"
-                           sortProperty="BuyerName" width="150">
+                           sortProperty="BuyerName" width="150" visible="false">
                   <af:outputText value="#{row.BuyerName}" id="ot6"/>
                 </af:column>
                 <af:column sortProperty="Season" filterable="true"
                            sortable="true"
                            headerText="#{bindings.HeaderVO1.hints.Season.label}"
-                           id="resId1c3" align="center">
+                           id="resId1c3" align="center" visible="false">
                   <af:outputText value="#{row.Season}" id="ot2"/>
+                </af:column>
+                <af:column headerText="Season"
+                           id="c6" align="center" sortable="true"
+                           filterable="true" sortProperty="NewSeason">
+                  <af:outputText value="#{row.NewSeason}" id="ot9"/>
+                </af:column>
+                <af:column headerText="Style"
+                           id="c7" align="center" sortable="true"
+                           filterable="true" sortProperty="NewStyle">
+                  <af:outputText value="#{row.NewStyle}" id="ot10"/>
                 </af:column>
                 <af:column sortProperty="Style" filterable="true"
                            sortable="true"
                            headerText="#{bindings.HeaderVO1.hints.Style.label}"
-                           id="resId1c2" align="center" width="150">
+                           id="resId1c2" align="center" width="150"
+                           visible="false">
                   <af:outputText value="#{row.Style}" id="ot1"/>
                 </af:column>
                 <af:column sortProperty="OspDate" filterable="true"

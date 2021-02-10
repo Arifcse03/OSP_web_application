@@ -136,21 +136,11 @@
       <Item Value="PocId"/>
     </AttrArray>
     <AttrArray Name="DerivedAttrNames">
-      <Item Value="Brand"/>
       <Item Value="BuyerD"/>
-      <Item Value="BuyerName"/>
-      <Item Value="CombinedAttribute1"/>
-      <Item Value="Season"/>
-      <Item Value="Style"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="PocId"/>
-      <Item Value="Brand"/>
       <Item Value="BuyerId"/>
-      <Item Value="Buyer"/>
-      <Item Value="CombinedAttribute"/>
-      <Item Value="Season"/>
-      <Item Value="Style"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PocId"/>
@@ -202,10 +192,16 @@ HeaderEO.closed_style,
 HeaderEO.closing_date,
 HeaderEO.poc_id,
 HeaderEO.Combined_Attribute1,
-HeaderEO.BUYER_D
-FROM MNJ_MFG_OSP_HEADER HeaderEO, XX_om_poc_h_t H
+HeaderEO.BUYER_D,
+
+ac.CUSTOMER_NAME New_Buyer_Name ,
+H.SEASON New_SEASON,
+H.STYLE New_STYLE
+
+FROM MNJ_MFG_OSP_HEADER HeaderEO, XX_om_poc_h_t H,ar_customers ac
 WHERE HeaderEO.ORG_ID = :P_ORG_ID 
 AND H.POC_ID = HeaderEO.POC_ID
+AND h.BUYER_ID = ac.CUSTOMER_ID
 ORDER BY HeaderEO.DOC_NO DESC]]>
   </SQLQuery>
   <EntityUsage
@@ -536,6 +532,57 @@ ORDER BY HeaderEO.DOC_NO DESC]]>
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="BuyerD"
+    PrecisionRule="true"
+    EntityAttrName="BuyerD"
+    EntityUsage="HeaderEO"
+    AliasName="BUYER_D"/>
+  <ViewAttribute
+    Name="NewBuyerName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NEW_BUYER_NAME"
+    Expression="NEW_BUYER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NewSeason"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NEW_SEASON"
+    Expression="NEW_SEASON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NewStyle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NEW_STYLE"
+    Expression="NEW_STYLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
     Name="CurrentStyle"
     IsUpdateable="false"
     IsPersistent="false"
@@ -563,12 +610,6 @@ ORDER BY HeaderEO.DOC_NO DESC]]>
       <Attr Name="_DisplaySize" Value="250"/>
     </DesignTime>
   </ViewAttribute>
-  <ViewAttribute
-    Name="BuyerD"
-    PrecisionRule="true"
-    EntityAttrName="BuyerD"
-    EntityUsage="HeaderEO"
-    AliasName="BUYER_D"/>
   <ViewCriteria
     Name="HeaderVOCriteria"
     ViewObjectName="mnj.mfg.model.entities.HeaderVO"

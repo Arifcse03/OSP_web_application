@@ -26,6 +26,9 @@
           <Item Value="BuyerName"/>
           <Item Value="PocId"/>
           <Item Value="OrgCode"/>
+          <Item Value="NewBuyerName"/>
+          <Item Value="NewSeason"/>
+          <Item Value="NewStyle"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

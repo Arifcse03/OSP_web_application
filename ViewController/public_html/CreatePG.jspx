@@ -20,7 +20,7 @@
             <f:facet name="toolbar"/>
             <f:facet name="legend"/>
             <f:facet name="info"/>
-            <af:panelFormLayout id="pfl1" maxColumns="10" rows="2"
+            <af:panelFormLayout id="pfl1" maxColumns="10" rows="4"
                                 inlineStyle="width:788px;"
                                 partialTriggers="cb1">
               <af:panelLabelAndMessage label="Document Number:" id="plam1">
@@ -40,6 +40,26 @@
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.OrgId.format}"/>
               </af:inputText>
+              <af:inputText value="#{bindings.BuyerName.inputValue}"
+                            label="Buyer:"
+                            required="#{bindings.BuyerName.hints.mandatory}"
+                            columns="#{bindings.BuyerName.hints.displayWidth}"
+                            maximumLength="#{bindings.BuyerName.hints.precision}"
+                            shortDesc="#{bindings.BuyerName.hints.tooltip}"
+                            id="it2" partialTriggers="pocIdId" autoSubmit="true"
+                            readOnly="true" visible="false">
+                <f:validator binding="#{bindings.BuyerName.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Season.inputValue}"
+                            label="Season:"
+                            required="#{bindings.Season.hints.mandatory}"
+                            columns="#{bindings.Season.hints.displayWidth}"
+                            maximumLength="#{bindings.Season.hints.precision}"
+                            shortDesc="#{bindings.Season.hints.tooltip}"
+                            id="it19" partialTriggers="pocIdId" readOnly="true"
+                            autoSubmit="true" visible="false">
+                <f:validator binding="#{bindings.Season.validator}"/>
+              </af:inputText>
               <af:inputListOfValues id="pocIdId"
                                     popupTitle="Search and Select: #{bindings.PocId.hints.label}"
                                     value="#{bindings.PocId.inputValue}"
@@ -54,26 +74,21 @@
                                   pattern="#{bindings.PocId.format}"/>
                 <af:autoSuggestBehavior suggestedItems="#{bindings.PocId.suggestedItems}"/>
               </af:inputListOfValues>
-              <af:inputText value="#{bindings.BuyerName.inputValue}"
-                            label="Buyer:"
-                            required="#{bindings.BuyerName.hints.mandatory}"
-                            columns="#{bindings.BuyerName.hints.displayWidth}"
-                            maximumLength="#{bindings.BuyerName.hints.precision}"
-                            shortDesc="#{bindings.BuyerName.hints.tooltip}"
-                            id="it2" partialTriggers="pocIdId"
-                            autoSubmit="true" readOnly="true">
-                <f:validator binding="#{bindings.BuyerName.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.Season.inputValue}"
-                            label="Season:"
-                            required="#{bindings.Season.hints.mandatory}"
-                            columns="#{bindings.Season.hints.displayWidth}"
-                            maximumLength="#{bindings.Season.hints.precision}"
-                            shortDesc="#{bindings.Season.hints.tooltip}"
-                            id="it19" partialTriggers="pocIdId" readOnly="true"
-                            autoSubmit="true">
-                <f:validator binding="#{bindings.Season.validator}"/>
-              </af:inputText>
+              <af:panelLabelAndMessage label="Buyer:"
+                                       id="plam6">
+                <af:outputText value="#{bindings.NewBuyerName.inputValue}"
+                               id="ot13"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Style:"
+                                       id="plam7">
+                <af:outputText value="#{bindings.NewStyle.inputValue}"
+                               id="ot14"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Season:"
+                                       id="plam8">
+                <af:outputText value="#{bindings.NewSeason.inputValue}"
+                               id="ot15"/>
+              </af:panelLabelAndMessage>
               <af:inputText value="#{bindings.Style.inputValue}"
                             label="Style:"
                             required="#{bindings.Style.hints.mandatory}"
@@ -81,7 +96,7 @@
                             maximumLength="#{bindings.Style.hints.precision}"
                             shortDesc="#{bindings.Style.hints.tooltip}"
                             id="it8" partialTriggers="pocIdId" readOnly="true"
-                            autoSubmit="true">
+                            autoSubmit="true" visible="false">
                 <f:validator binding="#{bindings.Style.validator}"/>
               </af:inputText>
               <af:inputText value="#{bindings.Brand.inputValue}"
@@ -91,7 +106,7 @@
                             maximumLength="#{bindings.Brand.hints.precision}"
                             shortDesc="#{bindings.Brand.hints.tooltip}"
                             id="it28" partialTriggers="pocIdId" readOnly="true"
-                            autoSubmit="true">
+                            autoSubmit="true" visible="false">
                 <f:validator binding="#{bindings.Brand.validator}"/>
               </af:inputText>
               <af:inputText value="#{bindings.CurrentSeason.inputValue}"
@@ -100,7 +115,8 @@
                             columns="#{bindings.CurrentSeason.hints.displayWidth}"
                             maximumLength="#{bindings.CurrentSeason.hints.precision}"
                             shortDesc="#{bindings.CurrentSeason.hints.tooltip}"
-                            id="it20" readOnly="true" rendered="false">
+                            id="it20" readOnly="true" rendered="false"
+                            visible="false">
                 <f:validator binding="#{bindings.CurrentSeason.validator}"/>
               </af:inputText>
               <af:inputDate value="#{bindings.OspDate.inputValue}"
@@ -124,9 +140,12 @@
                 <af:group id="g1">
                   <af:panelGroupLayout id="pgl1">
                     <af:spacer width="500" height="10" id="s1"/>
+                    <af:commandButton text="Save" id="cb28"
+                                      actionListener="#{MainBean.CustomSave}"/>
                     <af:commandButton actionListener="#{bindings.Commit.execute}"
                                       text="Save"
-                                      id="cb1" partialSubmit="true"/>
+                                      id="cb1" partialSubmit="true"
+                                      visible="false"/>
                     <af:commandButton
                                       text="Back"
                                       immediate="true" id="cb2"
