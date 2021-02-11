@@ -216,10 +216,10 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         linerow.setAttribute("BpoId",
                              getPopulateValue(poprow, "BpoNo")); //getPopulateValue() returns column value
         
-        //linerow.setAttribute("PocId",
-                                  //  getPopulateValue(poprow, "PocId"));
+        linerow.setAttribute("PocId",
+                                   getPopulateValue(poprow, "PocId"));
         
-       // linerow.setAttribute("SystemId", getPopulateValue(poprow, "SystemId"));
+       linerow.setAttribute("SystemId", getPopulateValue(poprow, "SystemId"));
         
        // linerow.setAttribute("Color", getPopulateValue(poprow, "Color"));
        // linerow.setAttribute("Wash", getPopulateValue(poprow, "Wash"));

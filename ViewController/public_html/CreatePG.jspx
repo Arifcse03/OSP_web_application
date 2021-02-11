@@ -760,7 +760,7 @@
                           binding="#{MainBean.splitValue}"/>
           </af:dialog>
         </af:popup>
-        <af:popup id="p3">
+        <af:popup id="p3" contentDelivery="lazyUncached">
           <af:dialog id="d4" title="Organization Assignment to STNs"
                      dialogListener="#{MainBean.StnOrganizationAssignLitener}">
             <af:panelCollection id="pc4">
@@ -856,7 +856,8 @@
             </af:panelCollection>
           </af:dialog>
         </af:popup>
-        <af:popup id="p4" binding="#{MainBean.orgSelectionPopUpBind}">
+        <af:popup id="p4" binding="#{MainBean.orgSelectionPopUpBind}"
+                  contentDelivery="lazyUncached">
           <af:dialog id="d5" dialogListener="#{MainBean.OrgSelectionListener}"
                      title="Organization Assignment to STNs">
             <af:table value="#{bindings.OrgAssignPopUpVO1.collectionModel}"
@@ -924,7 +925,7 @@
             </af:table>
           </af:dialog>
         </af:popup>
-        <af:popup id="p6">
+        <af:popup id="p6" contentDelivery="lazyUncached">
           <af:dialog id="d7" title="Assign Organization for Printing"
                      dialogListener="#{MainBean.OrgAssignToPrintingListener}">
             <af:panelCollection id="pc5">
@@ -1038,7 +1039,8 @@
           </af:dialog>
         </af:popup>
         <af:popup id="p7"
-                  binding="#{MainBean.orgSelectionForPrintingPopUpBind}">
+                  binding="#{MainBean.orgSelectionForPrintingPopUpBind}"
+                  contentDelivery="lazyUncached">
           <af:dialog id="d8" title="Organization Assign to Printing"
                      dialogListener="#{MainBean.OrgAssignToPrinting}">
             <af:table value="#{bindings.OrgAssignToPrintingPopUpVO1.collectionModel}"
@@ -1092,7 +1094,7 @@
             </af:table>
           </af:dialog>
         </af:popup>
-        <af:popup id="p8">
+        <af:popup id="p8" contentDelivery="lazyUncached">
           <af:dialog id="d9" title="Assign Organization for Embriodery"
                      dialogListener="#{MainBean.OrgAssignToEmbrioderyListener}">
             <af:panelCollection id="pc6">
