@@ -685,7 +685,7 @@
                                 columns="#{bindings.StnVO1.hints.BpoNo.displayWidth}"
                                 maximumLength="#{bindings.StnVO1.hints.BpoNo.precision}"
                                 shortDesc="#{bindings.StnVO1.hints.BpoNo.tooltip}"
-                                id="it5">
+                                id="it5" readOnly="true">
                     <f:validator binding="#{row.bindings.BpoNo.validator}"/>
                   </af:inputText>
                 </af:column>
