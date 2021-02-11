@@ -693,20 +693,13 @@
                            filterable="true" sortProperty="Bpo" align="center">
                   <af:outputText value="#{row.Bpo}" id="ot34"/>
                 </af:column>
-                <af:column sortProperty="OrderedQty" filterable="true"
-                           sortable="true" headerText="Order Qty" id="c16"
-                           align="center" width="111">
-                  <af:inputText value="#{row.bindings.OrderedQty.inputValue}"
-                                label="#{bindings.StnVO1.hints.OrderedQty.label}"
-                                required="#{bindings.StnVO1.hints.OrderedQty.mandatory}"
-                                columns="#{bindings.StnVO1.hints.OrderedQty.displayWidth}"
-                                maximumLength="#{bindings.StnVO1.hints.OrderedQty.precision}"
-                                shortDesc="#{bindings.StnVO1.hints.OrderedQty.tooltip}"
-                                id="it6">
-                    <f:validator binding="#{row.bindings.OrderedQty.validator}"/>
+                <af:column headerText="QTY"
+                           id="c16" align="center" sortable="true"
+                           filterable="true">
+                  <af:outputText value="#{row.OrderedQty}" id="ot48">
                     <af:convertNumber groupingUsed="false"
                                       pattern="#{bindings.StnVO1.hints.OrderedQty.format}"/>
-                  </af:inputText>
+                  </af:outputText>
                 </af:column>
                 <af:column sortProperty="Color" filterable="true"
                            sortable="true" headerText="Color" id="c10"
@@ -717,7 +710,7 @@
                                 columns="#{bindings.StnVO1.hints.Color.displayWidth}"
                                 maximumLength="#{bindings.StnVO1.hints.Color.precision}"
                                 shortDesc="#{bindings.StnVO1.hints.Color.tooltip}"
-                                id="it7">
+                                id="it7" readOnly="true">
                     <f:validator binding="#{row.bindings.Color.validator}"/>
                   </af:inputText>
                 </af:column>
@@ -730,7 +723,7 @@
                                 columns="#{bindings.StnVO1.hints.Wash.displayWidth}"
                                 maximumLength="#{bindings.StnVO1.hints.Wash.precision}"
                                 shortDesc="#{bindings.StnVO1.hints.Wash.tooltip}"
-                                id="it21">
+                                id="it21" readOnly="true">
                     <f:validator binding="#{row.bindings.Wash.validator}"/>
                   </af:inputText>
                 </af:column>
@@ -742,7 +735,7 @@
                                 columns="#{bindings.StnVO1.hints.Part.displayWidth}"
                                 maximumLength="#{bindings.StnVO1.hints.Part.precision}"
                                 shortDesc="#{bindings.StnVO1.hints.Part.tooltip}"
-                                id="it4">
+                                id="it4" readOnly="true">
                     <f:validator binding="#{row.bindings.Part.validator}"/>
                   </af:inputText>
                 </af:column>

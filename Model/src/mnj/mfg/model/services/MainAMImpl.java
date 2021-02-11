@@ -121,11 +121,9 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 //                                 " AND SEASON     = '" + Season + "'" +
 //                                 " AND ORG_ID     = '" + org + "'");
 /**
- * Added by Sakibul Islam for EBS Restructuring project on 13.May.2020
- */            
-            StnVo.setWhereClause("POC_ID   = " + PocId 
-//                                 " AND SYSTEM_ID = " + SystemId
-                                     );
+ * Added by Ariful Islam for EBS Restructuring project on 13.May.2020
+ */          System.out.println("Current poc id is:"+PocId);  
+            StnVo.setWhereClause("POC_ID   = "+ PocId+" " );
             System.out.println("Fill STN Query: " + StnVo.getQuery());
             StnVo.executeQuery();
         } catch (Exception e) {

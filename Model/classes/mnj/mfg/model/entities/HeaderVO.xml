@@ -22,7 +22,7 @@
     Name="P_ORG_ID"
     Kind="where"
     Type="java.lang.String">
-    <TransientExpression><![CDATA[adf.context.sessionScope.orgId]]></TransientExpression>
+    <TransientExpression><![CDATA[341//adf.context.sessionScope.orgId]]></TransientExpression>
   </Variable>
   <ViewAccessor
     Name="BuyerVO1"
@@ -144,12 +144,9 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PocId"/>
-      <Item Value="SystemId"/>
       <Item Value="Buyer"/>
       <Item Value="Style"/>
       <Item Value="Season"/>
-      <Item Value="Wash"/>
-      <Item Value="Color"/>
     </AttrArray>
     <DisplayCriteria
       Hint="showAndExecute"/>

@@ -144,12 +144,9 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PocId"/>
-      <Item Value="SystemId"/>
       <Item Value="Buyer"/>
       <Item Value="Style"/>
       <Item Value="Season"/>
-      <Item Value="Wash"/>
-      <Item Value="Color"/>
     </AttrArray>
     <DisplayCriteria
       Hint="showAndExecute"/>

@@ -23,24 +23,22 @@
     Name="p_org"
     Kind="where"
     Type="java.lang.String">
-    <TransientExpression><![CDATA[adf.context.sessionScope.orgId]]></TransientExpression>
+    <TransientExpression><![CDATA[341//adf.context.sessionScope.orgId]]></TransientExpression>
   </Variable>
   <SQLQuery>
     <![CDATA[SELECT DISTINCT
 H.poc_id,
-L.system_id,
+
 (ac.CUSTOMER_NAME || '/' || H.SEASON || '/' || NVL (H.STYLE, 'NULL'))
 Combined_Attribute,
 H.BUYER_ID,
 ac.CUSTOMER_NAME buyer,
 H.SEASON,
 H.STYLE,
-h.brand,
-L.color color,
-L.wash_name wash
-FROM xx_om_poc_h_t H, xx_om_poc_L_t L, ar_customers ac
-WHERE h.poc_id = L.poc_id
-AND h.BUYER_ID = ac.CUSTOMER_ID
+h.brand
+FROM xx_om_poc_h_t H, ar_customers ac  
+WHERe
+h.BUYER_ID = ac.CUSTOMER_ID
 AND H.LC_UNIT = :p_org]]>
   </SQLQuery>
   <ViewAttribute
@@ -60,27 +58,6 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="25"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="SystemId"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
-    AliasName="SYSTEM_ID"
-    Expression="SYSTEM_ID"
-    SQLType="NUMERIC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
-    </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="20"/>
-        <DISPLAYHINT
-          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -213,52 +190,6 @@ AND H.LC_UNIT = :p_org]]>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="Color"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="30"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="COLOR"
-    Expression="COLOR"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="30"/>
-    </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="40"/>
-        <DISPLAYHINT
-          Value="Hide"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="Wash"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="100"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="WASH"
-    Expression="WASH"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="100"/>
-    </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="16"/>
-        <DISPLAYHINT
-          Value="Hide"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
   <ViewCriteria
     Name="CombinedStyleLOV2Criteria"
     ViewObjectName="mnj.mfg.model.lov.views.CombinedStyleLOV2"
@@ -290,35 +221,30 @@ AND H.LC_UNIT = :p_org]]>
         ViewAttribute="PocId"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="CombinedAttribute"
         ViewAttribute="CombinedAttribute"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="CombinedStyleLOV2Criteria_vcrow186_Buyer"
         ViewAttribute="Buyer"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Season"
         ViewAttribute="Season"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Style"
         ViewAttribute="Style"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
