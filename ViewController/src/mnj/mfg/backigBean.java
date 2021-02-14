@@ -745,6 +745,8 @@ Integer.parseInt(selectedRow.getAttribute("StnQty").toString());
         // Add event code here...
         am.getDBTransaction().commit();
         ViewObject ho=am.getHeaderVO1();
-        ho.clearCache();
+       // ho.clearCache();
+      //  ho.executeQuery();
+        AdfFacesContext.getCurrentInstance().addPartialTarget(stnTable);
     }
 }
