@@ -116,6 +116,8 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 /**
  * Commented by Sakibul Islam for EBS Restructuring project on 13.May.2020
  */
+            
+            StnVo.setWhereClause("POC_ID='"+PocId+"'");
 //            StnVo.setWhereClause("BUYER_ID   = " + BuyerId +
 //                                 " AND STYLE_NAME = '" + Style + "'" +
 //                                 " AND SEASON     = '" + Season + "'" +
