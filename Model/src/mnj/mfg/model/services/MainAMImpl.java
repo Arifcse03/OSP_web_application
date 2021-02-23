@@ -1131,7 +1131,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
                     StnLineId =
                             rowFabShrinkL.getAttribute("StnLineId").toString();
-
+                        System.out.println("stnline id is:"+StnLineId);
                 String stmt =
                     "BEGIN :1 :=  MNJ_MFG_OSP_PKG.ORG_ASSIGN_TO_STN(:2,:3,:4); end;";
                 java.sql.CallableStatement cs =
@@ -1159,7 +1159,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         }
         itFabShrinkL.closeRowSetIterator();
         FabShrinkL.executeQuery();
-
+        System.out.println("stnline id is:"+StnLineId+"orgID is :"+OrgId+"and dep is :ORG_EMBR");
     }
 
     public void DeptAssignToStns() { //Added by Sakibul Islam on 15.Apr.18

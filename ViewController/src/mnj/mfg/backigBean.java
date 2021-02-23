@@ -616,10 +616,10 @@ Integer.parseInt(selectedRow.getAttribute("StnQty").toString());
     public void OrgAssignToEmbriodery(DialogEvent dialogEvent) {
         // Add event code here...
         if (dialogEvent.getOutcome().name().equals("ok")) {
-
+            System.out.println("In Org Assign To Embriodery Block");
             OperationBinding operationBinding =
                 executeOperation("OrgAssignToEmbriodery");
-            System.out.println("In Org Assign To Embriodery Block");
+            
             operationBinding.execute();
 
             AdfFacesContext.getCurrentInstance().addPartialTarget(detailTable);
@@ -745,8 +745,10 @@ Integer.parseInt(selectedRow.getAttribute("StnQty").toString());
         // Add event code here...
         am.getDBTransaction().commit();
         ViewObject ho=am.getHeaderVO1();
+        ViewObject stnline=am.getStnLineVO1();
        // ho.clearCache();
       //  ho.executeQuery();
+        stnline.clearCache();
         AdfFacesContext.getCurrentInstance().addPartialTarget(stnTable);
     }
 }

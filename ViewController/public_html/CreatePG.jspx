@@ -603,6 +603,17 @@
                                       pattern="#{bindings.DepAssignVO1.hints.NegotiablePrice.format}"/>
                   </af:inputText>
                 </af:column>
+                <af:column headerText="#{bindings.DepAssignVO1.hints.FinalDepartment.label}"
+                           id="c69">
+                  <af:outputText value="#{row.FinalDepartment}" id="ot49"/>
+                </af:column>
+                <af:column headerText="#{bindings.DepAssignVO1.hints.FinalMfgOrgId.label}"
+                           id="c70">
+                  <af:outputText value="#{row.FinalMfgOrgId}" id="ot50">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.DepAssignVO1.hints.FinalMfgOrgId.format}"/>
+                  </af:outputText>
+                </af:column>
                 <f:facet name="detailStamp">
                   <af:panelFormLayout id="pfl3">
                     <af:panelLabelAndMessage label="Creator:" id="plam20">
@@ -1201,7 +1212,8 @@
           </af:dialog>
         </af:popup>
         <af:popup id="p9"
-                  binding="#{MainBean.organizationSelectionForEmbrioderyPopUpBind}">
+                  binding="#{MainBean.organizationSelectionForEmbrioderyPopUpBind}"
+                  contentDelivery="lazyUncached">
           <af:dialog id="d10" title="Assign Organization for Embriodery"
                      dialogListener="#{MainBean.OrgAssignToEmbriodery}">
             <af:table value="#{bindings.OrgAssignToPrintingPopUpVO11.collectionModel}"
