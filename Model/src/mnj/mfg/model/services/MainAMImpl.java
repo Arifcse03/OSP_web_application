@@ -737,10 +737,10 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         ViewObject stnLine = this.getStnLineVO1();
 
-        String color;
+        String color;  
 
         String wash;
-        try {
+      /*  try {
             color = stnLine.getCurrentRow().getAttribute("Color").toString();
             wash = stnLine.getCurrentRow().getAttribute("Wash").toString();
         } catch (Exception e) {
@@ -752,21 +752,36 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
             fc.addMessage(null, Message);
             return null;
         }
+*/
+        /** added by arif for new wash color  */
+      try {
+          color = stnLine.getCurrentRow().getAttribute("ColorNew").toString();
+          wash = stnLine.getCurrentRow().getAttribute("NewWash").toString();
+      } catch (Exception e) {
 
+          FacesMessage Message =
+              new FacesMessage(" Color and Wash cann't be empty");
+          Message.setSeverity(FacesMessage.SEVERITY_INFO);
+          FacesContext fc = FacesContext.getCurrentInstance();
+          fc.addMessage(null, Message);
+          return null;
+      }
 
         String status = null;
-        String stmt =
-            "BEGIN  MNJ_MFG_OSP_PKG.OSP_JOB_CREATION(:1,:2,:3,:4); END;";
+       // String stmt =
+         //  "BEGIN  MNJ_MFG_OSP_PKG.OSP_JOB_CREATION(:1,:2,:3,:4); END;";
+        //new procedure for restructuring 
+          String stmt ="BEGIN  MNJ_MFG_OSP_PKG.XX_OSP_JOB_CREATION_API_PROC(:1,:2); END;";
 
         CallableStatement cs =
             getDBTransaction().createCallableStatement(stmt, 1);
         try {
-            cs.registerOutParameter(4, OracleTypes.VARCHAR);
+            cs.registerOutParameter(2, OracleTypes.VARCHAR);
             cs.setInt(1, Integer.parseInt(headerId));
-            cs.setString(2, color);
-            cs.setString(3, wash);
+            //cs.setString(2, color);
+           // cs.setString(3, wash);
             cs.execute();
-            status = cs.getString(4);
+            status = cs.getString(2);
             cs.close();
 
 
@@ -1268,7 +1283,7 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
 
         String headerId =
             vo.getCurrentRow().getAttribute("HeaderId").toString();
-
+System.out.println("header id is :"+headerId);
         return headerId;
     }
 
