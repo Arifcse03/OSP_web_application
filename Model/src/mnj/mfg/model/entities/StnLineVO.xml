@@ -38,12 +38,12 @@
        StnLineEO.RESPAPPLID,
        (select j.wip_entity_name            from WIP_DISCRETE_JOBS_V j        
     where j.attribute4 in('OSP','WASHING')  
+    AND j.ATTRIBUTE10= to_char(pL.System_id)
+AND j.Status_Type NOT IN (7, 12)
      -- and j.attribute2 =   StnLineEO.STN      
        and j.attribute3 = StnLineEO.header_id
-       and j.attribute8=StnLineEO.color
-       and j.status_type not in (7,12)
+      -- and j.attribute8=StnLineEO.color
        and rownum = 1
-      -- and j.attribute3=2097
        ) job_name,
        StnLineEO.SYSTEM_ID, 
        StnLineEO.POC_ID,
