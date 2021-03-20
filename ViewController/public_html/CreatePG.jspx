@@ -221,19 +221,6 @@
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.BuyerD.format}"/>
               </af:outputText>
-              <af:inputListOfValues id="combinedAttribute1Id"
-                                    popupTitle="Search and Select: #{bindings.CombinedAttribute1.hints.label}"
-                                    value="#{bindings.CombinedAttribute1.inputValue}"
-                                    label="Search Combination"
-                                    model="#{bindings.CombinedAttribute1.listOfValuesModel}"
-                                    required="#{bindings.CombinedAttribute1.hints.mandatory}"
-                                    columns="#{bindings.CombinedAttribute1.hints.displayWidth}"
-                                    shortDesc="#{bindings.CombinedAttribute1.hints.tooltip}"
-                                    visible="false" autoSubmit="true"
-                                    partialTriggers="pocIdId">
-                <f:validator binding="#{bindings.CombinedAttribute1.validator}"/>
-                <af:autoSuggestBehavior suggestedItems="#{bindings.CombinedAttribute1.suggestedItems}"/>
-              </af:inputListOfValues>
             </af:panelFormLayout>
             <af:panelCollection id="pc1" styleClass="AFStretchWidth">
               <f:facet name="menus"/>

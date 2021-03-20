@@ -188,7 +188,7 @@ HeaderEO.DOC_NO,
 HeaderEO.closed_style,
 HeaderEO.closing_date,
 HeaderEO.poc_id,
-HeaderEO.Combined_Attribute1,
+
 HeaderEO.BUYER_D,
 
 ac.CUSTOMER_NAME New_Buyer_Name ,
@@ -510,24 +510,7 @@ ORDER BY HeaderEO.DOC_NO DESC]]>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="CombinedAttribute1"
-    PrecisionRule="true"
-    EntityAttrName="CombinedAttribute1"
-    EntityUsage="HeaderEO"
-    AliasName="COMBINED_ATTRIBUTE1"
-    LOVName="LOV_CombinedAttribute1">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="mnj.mfg.model.entities.HeaderVO.CombinedAttribute1_LABEL"/>
-        <DISPLAYWIDTH
-          Value="40"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+  
   <ViewAttribute
     Name="BuyerD"
     PrecisionRule="true"

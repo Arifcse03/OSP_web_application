@@ -246,18 +246,6 @@
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
-  <Attribute
-    Name="CombinedAttribute1"
-    Precision="1500"
-    ColumnName="COMBINED_ATTRIBUTE1"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="MNJ_MFG_OSP_HEADER">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="1500"/>
-    </DesignTime>
-  </Attribute>
   <AccessorAttribute
     Name="StnLineEO"
     Association="mnj.mfg.model.entities.MnjMfgOspStnLineFkAssoc"

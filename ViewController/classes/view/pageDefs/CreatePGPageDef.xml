@@ -473,8 +473,6 @@
       </AttrNames>
     </attributeValues>
     <listOfValues StaticList="false" IterBinding="HeaderVO1Iterator"
-                  Uses="LOV_CombinedAttribute1" id="CombinedAttribute1"/>
-    <listOfValues StaticList="false" IterBinding="HeaderVO1Iterator"
                   Uses="LOV_PocId" id="PocId"/>
     <attributeValues IterBinding="HeaderVO1Iterator" id="BuyerName">
       <AttrNames>

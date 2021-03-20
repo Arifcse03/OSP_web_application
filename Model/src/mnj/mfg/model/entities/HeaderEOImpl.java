@@ -237,16 +237,6 @@ public class HeaderEOImpl extends EntityImpl {
             }
         }
         ,
-        CombinedAttribute1 {
-            public Object get(HeaderEOImpl obj) {
-                return obj.getCombinedAttribute1();
-            }
-
-            public void put(HeaderEOImpl obj, Object value) {
-                obj.setCombinedAttribute1((String)value);
-            }
-        }
-        ,
         StnLineEO {
             public Object get(HeaderEOImpl obj) {
                 return obj.getStnLineEO();
@@ -305,7 +295,6 @@ public class HeaderEOImpl extends EntityImpl {
     public static final int CLOSEDSTYLE = AttributesEnum.ClosedStyle.index();
     public static final int CLOSINGDATE = AttributesEnum.ClosingDate.index();
     public static final int POCID = AttributesEnum.PocId.index();
-    public static final int COMBINEDATTRIBUTE1 = AttributesEnum.CombinedAttribute1.index();
     public static final int STNLINEEO = AttributesEnum.StnLineEO.index();
 
     /**
@@ -643,23 +632,6 @@ public class HeaderEOImpl extends EntityImpl {
      */
     public void setPocId(Number value) {
         setAttributeInternal(POCID, value);
-    }
-
-
-    /**
-     * Gets the attribute value for CombinedAttribute1, using the alias name CombinedAttribute1.
-     * @return the CombinedAttribute1
-     */
-    public String getCombinedAttribute1() {
-        return (String)getAttributeInternal(COMBINEDATTRIBUTE1);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for CombinedAttribute1.
-     * @param value value to set the CombinedAttribute1
-     */
-    public void setCombinedAttribute1(String value) {
-        setAttributeInternal(COMBINEDATTRIBUTE1, value);
     }
 
 
