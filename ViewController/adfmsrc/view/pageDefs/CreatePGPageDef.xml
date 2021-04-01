@@ -472,8 +472,6 @@
         <Item Value="LastUpdaterName"/>
       </AttrNames>
     </attributeValues>
-    <listOfValues StaticList="false" IterBinding="HeaderVO1Iterator"
-                  Uses="LOV_PocId" id="PocId"/>
     <attributeValues IterBinding="HeaderVO1Iterator" id="BuyerName">
       <AttrNames>
         <Item Value="BuyerName"/>
@@ -514,5 +512,7 @@
         <Item Value="NewSeason"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues StaticList="false" IterBinding="HeaderVO1Iterator"
+                  Uses="LOV_PocId" id="PocId"/>
   </bindings>
 </pageDefinition>

@@ -63,16 +63,14 @@
               <af:inputListOfValues id="pocIdId"
                                     popupTitle="Search and Select: #{bindings.PocId.hints.label}"
                                     value="#{bindings.PocId.inputValue}"
-                                    label="Poc Id:"
+                                    label="#{bindings.PocId.hints.label}"
                                     model="#{bindings.PocId.listOfValuesModel}"
                                     required="#{bindings.PocId.hints.mandatory}"
                                     columns="#{bindings.PocId.hints.displayWidth}"
-                                    shortDesc="#{bindings.PocId.hints.tooltip}"
-                                    autoSubmit="true">
+                                    shortDesc="#{bindings.PocId.hints.tooltip}">
                 <f:validator binding="#{bindings.PocId.validator}"/>
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.PocId.format}"/>
-                <af:autoSuggestBehavior suggestedItems="#{bindings.PocId.suggestedItems}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="Buyer:"
                                        id="plam6">

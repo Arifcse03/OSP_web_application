@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="CombinedStyleLOV2"
+  Name="pocLOV"
   Version="11.1.1.62.29"
   InheritPersonalization="true"
   BindingStyle="OracleName"
@@ -16,11 +16,11 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="mnj.mfg.model.lov.views.CombinedStyleLOV2_LABEL"/>
+        ResId="mnj.mfg.model.lov.views.pocLOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="p_org"
+    Name="org"
     Kind="where"
     Type="java.lang.String">
     <TransientExpression><![CDATA[341//adf.context.sessionScope.orgId]]></TransientExpression>
@@ -29,8 +29,6 @@
     <![CDATA[SELECT DISTINCT
 H.poc_id,
 
-(ac.CUSTOMER_NAME || '/' || H.SEASON || '/' || NVL (H.STYLE, 'NULL'))
-Combined_Attribute,
 H.BUYER_ID,
 ac.CUSTOMER_NAME buyer,
 H.SEASON,
@@ -39,7 +37,7 @@ h.brand
 FROM xx_om_poc_h_t H, ar_customers ac  
 WHERe
 h.BUYER_ID = ac.CUSTOMER_ID
-AND H.LC_UNIT = :p_org]]>
+AND H.LC_UNIT =:org]]>
   </SQLQuery>
   <ViewAttribute
     Name="PocId"
@@ -57,29 +55,7 @@ AND H.LC_UNIT = :p_org]]>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="25"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="CombinedAttribute"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="182"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="COMBINED_ATTRIBUTE"
-    Expression="COMBINED_ATTRIBUTE"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="182"/>
-    </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="10"/>
-        <DISPLAYHINT
-          Value="Hide"/>
+          Value="2"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -98,7 +74,7 @@ AND H.LC_UNIT = :p_org]]>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="20"/>
+          Value="10"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -119,8 +95,6 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
-        <DISPLAYHINT
-          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -140,9 +114,7 @@ AND H.LC_UNIT = :p_org]]>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="15"/>
-        <DISPLAYHINT
-          Value="Hide"/>
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -162,9 +134,7 @@ AND H.LC_UNIT = :p_org]]>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="15"/>
-        <DISPLAYHINT
-          Value="Hide"/>
+          Value="10"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -185,65 +155,7 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
-        <DISPLAYHINT
-          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewCriteria
-    Name="CombinedStyleLOV2Criteria"
-    ViewObjectName="mnj.mfg.model.lov.views.CombinedStyleLOV2"
-    Conjunction="AND">
-    <Properties>
-      <CustomProperties>
-        <Property
-          Name="displayOperators"
-          Value="InAdvancedMode"/>
-        <Property
-          Name="autoExecute"
-          Value="false"/>
-        <Property
-          Name="allowConjunctionOverride"
-          Value="true"/>
-        <Property
-          Name="showInList"
-          Value="true"/>
-        <Property
-          Name="mode"
-          Value="Basic"/>
-      </CustomProperties>
-    </Properties>
-    <ViewCriteriaRow
-      Name="vcrow186"
-      UpperColumns="1">
-      <ViewCriteriaItem
-        Name="PocId"
-        ViewAttribute="PocId"
-        Operator="="
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="CombinedStyleLOV2Criteria_vcrow186_Buyer"
-        ViewAttribute="Buyer"
-        Operator="CONTAINS"
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="Season"
-        ViewAttribute="Season"
-        Operator="CONTAINS"
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="Style"
-        ViewAttribute="Style"
-        Operator="CONTAINS"
-        Conjunction="AND"
-        Required="Optional"/>
-    </ViewCriteriaRow>
-  </ViewCriteria>
-  <ResourceBundle>
-    <PropertiesBundle
-      PropertiesFile="mnj.mfg.model.ModelBundle"/>
-  </ResourceBundle>
 </ViewObject>
