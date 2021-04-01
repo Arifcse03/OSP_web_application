@@ -190,58 +190,6 @@ AND H.LC_UNIT = :p_org]]>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewCriteria
-    Name="CombinedStyleLOV2Criteria"
-    ViewObjectName="mnj.mfg.model.lov.views.CombinedStyleLOV2"
-    Conjunction="AND">
-    <Properties>
-      <CustomProperties>
-        <Property
-          Name="displayOperators"
-          Value="InAdvancedMode"/>
-        <Property
-          Name="autoExecute"
-          Value="false"/>
-        <Property
-          Name="allowConjunctionOverride"
-          Value="true"/>
-        <Property
-          Name="showInList"
-          Value="true"/>
-        <Property
-          Name="mode"
-          Value="Basic"/>
-      </CustomProperties>
-    </Properties>
-    <ViewCriteriaRow
-      Name="vcrow186"
-      UpperColumns="1">
-      <ViewCriteriaItem
-        Name="PocId"
-        ViewAttribute="PocId"
-        Operator="="
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="CombinedStyleLOV2Criteria_vcrow186_Buyer"
-        ViewAttribute="Buyer"
-        Operator="CONTAINS"
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="Season"
-        ViewAttribute="Season"
-        Operator="CONTAINS"
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="Style"
-        ViewAttribute="Style"
-        Operator="CONTAINS"
-        Conjunction="AND"
-        Required="Optional"/>
-    </ViewCriteriaRow>
-  </ViewCriteria>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="mnj.mfg.model.ModelBundle"/>

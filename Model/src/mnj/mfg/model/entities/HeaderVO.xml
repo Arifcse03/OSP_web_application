@@ -123,7 +123,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_PocId"
-    ListVOName="pocLOV1"
+    ListVOName="CombinedStyleLOV2_1"
     ListRangeSize="10"
     NullValueFlag="none"
     NullValueId="LOV_PocId_LOVUIHints_NullValueId"
