@@ -662,8 +662,8 @@ public class MainAMImpl extends ApplicationModuleImpl implements MainAM {
         System.out.println("StlLineId........ " + StlLineId);
 
         String status = null;
-        String stmt =
-            "BEGIN  MNJ_MFG_OSP_PKG.OSP_ITEM_CREATION(:1,:2 ,:3, :4, :5, :6, :7); END;";
+        String stmt ="BEGIN MNJ_MFG_OSP_PKG.XX_OSP_ITEM_CREATION_API_PROC(:1,:2 ,:3, :4, :5, :6, :7); END;";
+         // 13 april 2021 // "BEGIN  MNJ_MFG_OSP_PKG.OSP_ITEM_CREATION(:1,:2 ,:3, :4, :5, :6, :7); END;";
 
         CallableStatement cs =
             getDBTransaction().createCallableStatement(stmt, 1);
