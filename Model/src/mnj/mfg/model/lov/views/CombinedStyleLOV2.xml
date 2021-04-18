@@ -99,6 +99,8 @@ AND H.LC_UNIT = :p_org]]>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <DISPLAYHINT
+          Value="Hide"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -114,13 +116,14 @@ AND H.LC_UNIT = :p_org]]>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
+      <Attr Name="_diagramName" Value="Buyer Name:"/>
     </DesignTime>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="10"/>
         <DISPLAYHINT
-          Value="Hide"/>
+          Value="Display"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -140,9 +143,9 @@ AND H.LC_UNIT = :p_org]]>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="15"/>
+          Value="50"/>
         <DISPLAYHINT
-          Value="Hide"/>
+          Value="Display"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -164,7 +167,7 @@ AND H.LC_UNIT = :p_org]]>
         <DISPLAYWIDTH
           Value="15"/>
         <DISPLAYHINT
-          Value="Hide"/>
+          Value="Display"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
