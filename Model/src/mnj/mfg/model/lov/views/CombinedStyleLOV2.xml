@@ -39,6 +39,7 @@ h.brand
 FROM xx_om_poc_h_t H, ar_customers ac  
 WHERe
 h.BUYER_ID = ac.CUSTOMER_ID
+and Not  exists (select poc_id from MNJ_MFG_OSP_HEADER oh where oh.poc_id=H.POC_ID)
 AND H.LC_UNIT = :p_org]]>
   </SQLQuery>
   <ViewAttribute
@@ -168,6 +169,8 @@ AND H.LC_UNIT = :p_org]]>
           Value="15"/>
         <DISPLAYHINT
           Value="Display"/>
+        <AUTOSUBMIT
+          Value="true"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
