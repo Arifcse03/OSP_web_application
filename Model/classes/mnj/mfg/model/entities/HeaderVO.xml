@@ -137,10 +137,16 @@
     </AttrArray>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="BuyerD"/>
+      <Item Value="NewSeason"/>
+      <Item Value="NewStyle"/>
+      <Item Value="NewBuyerName"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="PocId"/>
       <Item Value="BuyerId"/>
+      <Item Value="Season"/>
+      <Item Value="Style"/>
+      <Item Value="Buyer"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="PocId"/>
@@ -536,7 +542,6 @@ ORDER BY HeaderEO.DOC_NO DESC]]>
     AliasName="BUYER_D"/>
   <ViewAttribute
     Name="NewBuyerName"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="50"
@@ -551,7 +556,6 @@ ORDER BY HeaderEO.DOC_NO DESC]]>
   </ViewAttribute>
   <ViewAttribute
     Name="NewSeason"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="30"
@@ -566,7 +570,6 @@ ORDER BY HeaderEO.DOC_NO DESC]]>
   </ViewAttribute>
   <ViewAttribute
     Name="NewStyle"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="100"
@@ -581,14 +584,14 @@ ORDER BY HeaderEO.DOC_NO DESC]]>
   </ViewAttribute>
   <ViewAttribute
     Name="CurrentStyle"
-    IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
     Precision="250"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="CURRENT_STYLE"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    IsSelected="false">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="250"/>
     </DesignTime>
